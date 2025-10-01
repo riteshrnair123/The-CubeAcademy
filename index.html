@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cube Academy | WCA Mastery Classes</title>
+    <title>The CubeAcademy | WCA Mastery Classes</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font -->
@@ -36,12 +36,16 @@
             border-bottom: 2px solid #ff5800; /* Rubiks Orange underline */
             color: #ff5800; /* Rubiks Orange text */
         }
+        /* New: Text shadow for high contrast header */
+        .text-shadow-strong {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
     </style>
     <!-- Load Lucide Icons for aesthetic appeal -->
     <script type="module">
-        import { createIcons, Cubes, BrainCircuit, Timer, Trophy } from 'https://unpkg.com/lucide@latest';
+        import { createIcons, Cubes, BrainCircuit, Timer, Trophy, Star } from 'https://unpkg.com/lucide@latest';
         window.addEventListener('load', () => {
-            createIcons({ Cubes, BrainCircuit, Timer, Trophy });
+            createIcons({ Cubes, BrainCircuit, Timer, Trophy, Star });
         });
     </script>
 </head>
@@ -51,16 +55,9 @@
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-rubiks-blue flex items-center">
-                <!-- Custom SVG Logo -->
-                <svg class="w-8 h-8 mr-2 flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Base Blue Cube Shape -->
-                    <rect width="100" height="100" rx="20" fill="#0052b4"/>
-                    <!-- Yellow Side -->
-                    <path d="M50 10V50H10V90H50V50H90V10H50Z" fill="#ffcd00"/>
-                    <!-- Orange Face -->
-                    <path d="M50 50H90V90H50V50Z" fill="#ff5800"/>
-                    <title>The Cube Academy Logo</title>
-                </svg>
+                <!-- START: UPDATED LOGO INTEGRATION -->
+                <img src="Gemini_Generated_Image_ky8mnsky8mnsky8m.jpg" alt="The Cube Academy Logo" class="w-12 h-12 mr-2 object-contain flex-shrink-0">
+                <!-- END: UPDATED LOGO INTEGRATION -->
                 The Cube Academy
             </div>
             <nav id="main-nav" class="hidden md:flex space-x-8 text-gray-700 font-medium">
@@ -106,14 +103,14 @@
         <div id="page-events" class="page-content bg-gray-50">
             
             <!-- Hero Section (Integrated into Events Page) -->
-            <section id="hero" class="relative overflow-hidden pt-16 pb-24 text-white" style="background-image: url('https://placehold.co/1920x500/1a202c/4f4f4f?text=Stylized+Cube+Pattern'); background-size: cover; background-position: center;">
+            <section id="hero" class="relative overflow-hidden pt-16 pb-24 text-white" style="background-image: url('https://placehold.co/1920x500/1e293b/374151?text=Dynamic+Cubing+Background'); background-size: cover; background-position: center;">
                 <div class="absolute inset-0 bg-gray-800 opacity-80"></div>
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <!-- UPDATED CATCHY HEADING -->
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+                    <!-- UPDATED CATCHY HEADING with text shadow-->
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 text-shadow-strong">
                         From Beginner Solves to <span class="text-rubiks-yellow">WCA Podium Speeds</span>
                     </h1>
-                    <p class="text-xl sm:text-2xl font-light mb-4 max-w-3xl mx-auto">
+                    <p class="text-xl sm:text-2xl font-light mb-4 max-w-3xl mx-auto border-b border-gray-300 pb-3">
                         Go beyond the 3x3! We offer comprehensive online classes to turn you into a complete speedcubing champion, mastering every core event from 2x2 to 7x7 and Sides Events including Square-1, Megaminx etx..
                     </p>
                     <p class="text-lg font-semibold text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -451,7 +448,8 @@
             eventsGrid.innerHTML = ''; 
             wcaEvents.forEach(event => {
                 const eventCard = document.createElement('div');
-                eventCard.className = 'bg-white rounded-xl p-6 shadow-cube border-t-4 border-rubiks-orange hover:shadow-xl transition duration-300 transform hover:-translate-y-1';
+                // Added transform hover and shadow to make cards more interactive and 3D
+                eventCard.className = 'bg-white rounded-xl p-6 shadow-cube border-t-4 border-rubiks-orange hover:shadow-2xl transition duration-300 transform hover:scale-[1.03]';
                 
                 let icon = '<i data-lucide="cubes" class="w-6 h-6 mb-2 text-rubiks-blue"></i>'; 
 
