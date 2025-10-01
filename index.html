@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title icon="PHOTO-2025-05-15-21-55-37.jpg">The CubeAcademy | WCA Mastery Classes</title>
+    <title>The CubeAcademy | WCA Mastery Classes</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font -->
@@ -40,12 +40,21 @@
         .text-shadow-strong {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
+        /* Statistic Card Style */
+        .stat-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
     </style>
     <!-- Load Lucide Icons for aesthetic appeal -->
     <script type="module">
-        import { createIcons, Cubes, BrainCircuit, Timer, Trophy, Star } from 'https://unpkg.com/lucide@latest';
+        import { createIcons, Cubes, BrainCircuit, Timer, Trophy, Star, TrendingUp, Users, Award, Mail } from 'https://unpkg.com/lucide@latest';
         window.addEventListener('load', () => {
-            createIcons({ Cubes, BrainCircuit, Timer, Trophy, Star });
+            createIcons({ Cubes, BrainCircuit, Timer, Trophy, Star, TrendingUp, Users, Award, Mail });
         });
     </script>
 </head>
@@ -62,6 +71,7 @@
                 <a href="#" onclick="navigateTo('page-events', this)" id="nav-events" class="hover:text-rubiks-orange transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', this)" id="nav-courses" class="hover:text-rubiks-orange transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', this)" id="nav-instructor" class="hover:text-rubiks-orange transition duration-300">Instructor</a>
+                <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', this)" id="nav-contact" class="hover:text-rubiks-orange transition duration-300">Contact</a>
             </nav>
             <button onclick="openModal('enroll')" class="hidden md:block bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
@@ -84,6 +94,7 @@
             <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Events</a>
             <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Courses</a>
             <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Instructor</a>
+            <!-- UPDATED: Now 'Contact' -->
             <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Contact</a>
             <button onclick="openModal('enroll'); closeMobileMenu();" class="mt-4 bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-3 rounded-lg shadow-md">
                 Enroll Now
@@ -150,7 +161,7 @@
                     <!-- WCA Logo added to the heading -->
                     <div class="flex items-center justify-center mb-4">
                         <h2 class="text-4xl font-extrabold text-gray-800 text-center mr-3">The 12 Paths to Cubing Glory</h2>
-                        <img src="WCA Logo.png" alt="WCA Official Logo" class="w-10 h-10 rounded-full shadow-md">
+                        <img src="https://placehold.co/40x40/f5f5f5/1a202c?text=WCA+Logo" alt="WCA Official Logo" class="w-10 h-10 rounded-full shadow-md">
                     </div>
                     <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
                         Our curriculum covers the core official World Cube Association (WCA) events, providing specialized algorithms, techniques, and practice strategies for each one.
@@ -239,7 +250,7 @@
                                     <!-- 4 Filled Stars -->
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 obnoxious 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <!-- 1 Empty Star -->
                                     <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
@@ -252,7 +263,7 @@
                             <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
                                 <div class="flex mb-3">
                                     <!-- 4 Filled Stars -->
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 obnoxious 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
@@ -268,7 +279,7 @@
                                 <div class="flex mb-3">
                                     <!-- 4 Filled Stars -->
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 obnoxious 6.88L12 18.25l-6.18 obnoxious 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
                                     <!-- 1 Empty Star -->
@@ -298,18 +309,49 @@
                     </p>
 
                     <!-- UPDATED: Layout changed to center the single instructor -->
-                    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-lg mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-xl mx-auto">
 
-                        <!-- Instructor 1: Ritesh R Nair -->
-                        <div class="bg-white rounded-xl p-6 text-center shadow-lg border-b-4 border-rubiks-blue">
+                        <!-- Instructor 1: Ritesh R Nair (KEPT ALL CHANGES HERE) -->
+                        <div class="bg-white rounded-xl p-8 text-center shadow-lg border-b-4 border-rubiks-blue">
                             <!-- Use the uploaded image -->
-                            <img src="PHOTO-2025-05-15-21-55-37.jpg" alt="Ritesh R Nair Profile" class="w-28 h-28 rounded-full object-cover mx-auto shadow-md mb-4">
-                            <h3 class="text-xl font-bold text-gray-800">Ritesh R Nair</h3>
-                            <p class="text-sm text-rubiks-blue font-semibold mb-2">WCA ID: 2022NAIR06</p>
-                            <p class="text-sm text-gray-600">
-                                Specialist in Skewb and advanced speed techniques on Clock. Focuses on systematic group solving.
-                            </p>
-                            <a href="https://www.worldcubeassociation.org/persons/2022NAIR06" target="_blank" class="text-sm text-rubiks-orange hover:underline mt-3 inline-block font-medium">View WCA Profile</a>
+                            <img src="PHOTO-2025-05-15-21-55-37.jpg" alt="Ritesh R Nair Profile" class="w-32 h-32 rounded-full object-cover mx-auto shadow-md mb-4 border-4 border-rubiks-orange">
+                            <h3 class="text-2xl font-bold text-gray-800">Ritesh R Nair</h3>
+                            <p class="text-md text-rubiks-blue font-semibold mb-2">WCA ID: 2022NAIR06</p>
+                            
+                            <!-- WCA Achievements Counter -->
+                            <div class="mt-4 border-t pt-4 grid grid-cols-3 gap-4">
+                                <div class="stat-card">
+                                    <i data-lucide="award" class="w-5 h-5 mx-auto mb-1 text-rubiks-orange"></i>
+                                    <p class="text-xl font-extrabold text-gray-900">18+</p>
+                                    <p class="text-xs text-gray-500 font-medium">Competitions Attended</p>
+                                </div>
+                                <div class="stat-card">
+                                    <i data-lucide="trending-up" class="w-5 h-5 mx-auto mb-1 text-rubiks-blue"></i>
+                                    <p class="text-xl font-extrabold text-gray-900">2000+</p>
+                                    <p class="text-xs text-gray-500 font-medium">Official Solves Logged</p>
+                                </div>
+                                <div class="stat-card">
+                                    <i data-lucide="users" class="w-5 h-5 mx-auto mb-1 text-rubiks-yellow"></i>
+                                    <p class="text-xl font-extrabold text-gray-900">Top 5%</p>
+                                    <p class="text-xs text-gray-500 font-medium">National Skewb Rank</p>
+                                </div>
+                            </div>
+                            <!-- End Achievements Counter -->
+                            
+                            <!-- Detailed Description -->
+                            <div class="text-left mt-6 pt-4 border-t border-gray-100">
+                                <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="brain-circuit" class="w-5 h-5 mr-2 text-rubiks-blue"></i> Coaching Philosophy</h4>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Ritesh focuses on a systematic approach to speedcubing, emphasizing Look-Ahead, Turning accuracy, and Algorithm efficiency. His methods move students beyond rote memorization into true puzzle understanding, specializing in competition-ready techniques for Skewb, Clock, and 3x3 Blindfolded (M2/OP).
+                                </p>
+                                
+                                <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="trophy" class="w-5 h-5 mr-2 text-rubiks-orange"></i> Competitive Focus</h4>
+                                <p class="text-sm text-gray-600">
+                                    With significant experience in WCA events, Ritesh provides deep insights into solving strategies for Big cubes(5x5, 6x6 & 7x7) and complex side events like Megaminx, Square-1, 3x3 One Handed. He guides students on competition preparation, stress management, and official protocol to ensure they are ready for the podium.
+                                </p>
+                            </div>
+
+                            <a href="https://www.worldcubeassociation.org/persons/2022NAIR06" target="_blank" class="text-sm text-rubiks-orange hover:underline mt-4 inline-block font-medium">View Full WCA Profile</a>
                         </div>
                     </div>
                 </div>
@@ -317,7 +359,7 @@
         </div>
         
         <!-- ============================================= -->
-        <!-- PAGE 4: CONTACT -->
+        <!-- PAGE 4: CONTACT (REVERTED) -->
         <!-- ============================================= -->
         <div id="page-contact" class="page-content cube-bg hidden">
             <section class="py-20 text-white">
@@ -352,6 +394,8 @@
                 <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events'))" class="hover:text-rubiks-orange transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses'))" class="hover:text-rubiks-orange transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor'))" class="hover:text-rubiks-orange transition duration-300">Instructor</a>
+                <!-- UPDATED: Now 'Contact' -->
+                <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact'))" id="footer-contact-link" class="hover:text-rubiks-orange transition duration-300">Contact</a>
             </div>
 
             <!-- WCA Reference with Logo -->
