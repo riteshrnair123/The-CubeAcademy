@@ -46,11 +46,3 @@ Install the "Live Server" extension (by Ritwick Dey) in VS Code.
 
 Right-click rubiks_classes.html and select "Open with Live Server" to view the site and enable automatic browser refreshing on save.
 
-📧 Form Submission Configuration
-To receive inquiries submitted through the "Enrollment Inquiry" modal, you must configure the Formspree link:
-
-Get Your Endpoint: Create a free form on Formspree and copy the unique endpoint URL (e.g., https://formspree.io/f/xbjnopqo).
-
-Update HTML: Open rubiks_classes.html and replace the placeholder URL on Line 622 with your unique Formspree endpoint:
-
-<form id="enrollment-form" action="YOUR_UNIQUE_FORMSPREE_URL_HERE" method="POST">
