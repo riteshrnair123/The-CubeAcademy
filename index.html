@@ -307,18 +307,21 @@
                 </button>
             </div>
 
-            <form id="enrollment-form">
+            <!-- START: FORMSPREE INTEGRATION -->
+            <!-- The action must be replaced with your unique Formspree endpoint -->
+            <form id="enrollment-form" action="https://formspree.io/f/meorkqba" method="POST">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Full Name</label>
-                    <input type="text" id="name" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                    <!-- IMPORTANT: The 'name' attribute is required for Formspree to capture the field -->
+                    <input type="text" id="name" name="name" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email Address</label>
-                    <input type="email" id="email" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                    <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="course">Interested Course/Topic</label>
-                    <select id="course" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                    <select id="course" name="course" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
                         <option value="">-- Select or type a course --</option>
                         <option value="Foundation Tier">Foundation Tier</option>
                         <option value="Advanced Speed Tier">Advanced Speed Tier</option>
@@ -328,13 +331,14 @@
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Your Current Skill/Message</label>
-                    <textarea id="message" rows="3" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200" placeholder="e.g., I can solve the 3x3 in 30s and want to learn F2L."></textarea>
+                    <textarea id="message" name="message" rows="3" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200" placeholder="e.g., I can solve the 3x3 in 30s and want to learn F2L."></textarea>
                 </div>
                 <div id="modal-message" class="text-sm text-center text-green-600 mb-4 hidden"></div>
                 <button type="submit" class="w-full bg-rubiks-orange hover:bg-opacity-90 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
                     Submit Inquiry
                 </button>
             </form>
+            <!-- END: FORMSPREE INTEGRATION -->
         </div>
     </div>
 
@@ -422,6 +426,7 @@
             const modal = document.getElementById('enrollment-modal');
             const modalTitle = document.getElementById('modal-title');
             const courseSelect = document.getElementById('course');
+            // Form element reference remains, but the submit listener below is REMOVED
             const form = document.getElementById('enrollment-form');
             const messageDiv = document.getElementById('modal-message');
 
@@ -448,32 +453,11 @@
                 setTimeout(() => modal.classList.add('hidden'), 300); 
             };
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Simulate form submission success (since there is no backend)
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const course = courseSelect.value;
-                const message = document.getElementById('message').value;
-
-                // Log data to console for demonstration
-                console.log("--- Form Submitted ---");
-                console.log(`Name: ${name}`);
-                console.log(`Email: ${email}`);
-                console.log(`Course: ${course}`);
-                console.log(`Message: ${message}`);
-                console.log("----------------------");
-
-                // Display success message
-                messageDiv.textContent = `Thank thank you, ${name}! Your inquiry about ${course} has been sent. We will contact you at ${email} shortly.`;
-                messageDiv.classList.remove('hidden');
-                
-                // Clear the form fields
-                form.reset();
-                
-                // Optional: Automatically close the modal after a delay
-                setTimeout(closeModal, 4000);
-            });
+            // REMOVED: form.addEventListener('submit', ...) block here.
+            // Formspree now handles the submission, validation, and redirection.
+            // You can optionally add an event listener for the form's 'submit' event
+            // to show a custom thank you message or close the modal *before* Formspree redirects,
+            // but the basic action=... is the simplest working solution.
             
             // 4. Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
