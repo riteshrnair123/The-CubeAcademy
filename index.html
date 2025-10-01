@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cube Academy | WCA Mastery Classes</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            /* Light gray background */
+        }
+        
+        .cube-bg {
+            background-color: #1a202c;
+            /* Dark background for contrast */
+        }
+        
+        .text-rubiks-blue {
+            color: #0052b4;
+        }
+        
+        .bg-rubiks-orange {
+            background-color: #ff5800;
+        }
+        
+        .bg-rubiks-yellow {
+            background-color: #ffcd00;
+        }
+        
+        .border-rubiks-green {
+            border-color: #009e60;
+        }
+        
+        .shadow-cube {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+    <!-- Load Lucide Icons for aesthetic appeal -->
+    <script type="module">
+        import { createIcons, Cubes, BrainCircuit, Timer, Trophy } from 'https://unpkg.com/lucide@latest'; window.addEventListener('load', () => { createIcons({ Cubes, BrainCircuit, Timer, Trophy }); });
+    </script>
+</head>
+
+<body class="cube-bg min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-rubiks-blue flex items-center">
+                <i data-lucide="cubes" class="w-6 h-6 mr-2 text-rubiks-orange"></i> The Cube Academy
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#events" class="hover:text-rubiks-orange transition duration-300">Events</a>
+                <a href="#courses" class="hover:text-rubiks-orange transition duration-300">Courses</a>
+                <a href="#instructor" class="hover:text-rubiks-orange transition duration-300">Instructor</a>
+                <a href="#contact" class="hover:text-rubiks-orange transition duration-300">Contact</a>
+            </nav>
+            <button onclick="openModal('enroll')" class="hidden md:block bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                Enroll Now
+            </button>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-white p-6 shadow-xl transform transition-transform duration-300 translate-x-full">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <nav class="flex flex-col space-y-4 mt-10 text-xl font-semibold">
+            <a href="#events" class="text-gray-800 hover:text-rubiks-orange transition duration-300" onclick="closeMobileMenu()">Events</a>
+            <a href="#courses" class="text-gray-800 hover:text-rubiks-orange transition duration-300" onclick="closeMobileMenu()">Courses</a>
+            <a href="#instructor" class="text-gray-800 hover:text-rubiks-orange transition duration-300" onclick="closeMobileMenu()">Instructor</a>
+            <a href="#contact" class="text-gray-800 hover:text-rubiks-orange transition duration-300" onclick="closeMobileMenu()">Contact</a>
+            <button onclick="openModal('enroll'); closeMobileMenu();" class="mt-4 bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-3 rounded-lg shadow-md">
+                Enroll Now
+            </button>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden pt-16 pb-24 text-white">
+        <div class="absolute inset-0 bg-gray-800 opacity-90"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+                Master 12 <span class="text-rubiks-yellow">WCA Events</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                Go beyond the 3x3! We offer comprehensive online classes to turn you into a complete speedcubing champion, mastering every core event from 2x2 to 7x7 and Sides Events including Square-1, Megaminx etx..
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button onclick="openModal('enroll')" class="bg-rubiks-orange text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    Start Your Mastery Path
+                </button>
+                <a href="#events" class="bg-white text-gray-800 text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                    <i data-lucide="brain-circuit" class="w-5 h-5 mr-2"></i> Explore Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WCA Events Grid Section -->
+    <section id="events" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-4">The 12 Paths to Cubing Glory</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Our curriculum covers the core official World Cube Association (WCA) events, providing specialized algorithms, techniques, and practice strategies for each one.
+            </p>
+
+            <div id="events-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Event cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Tiers Section -->
+    <section id="courses" class="py-20 cube-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-12">Choose Your Level</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1: Fundamentals -->
+                <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-rubiks-blue transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="cubes" class="w-8 h-8 mr-3 text-rubiks-blue"></i>
+                        <h3 class="text-2xl font-bold">Foundation Tier</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Perfect for new solvers or those stuck on the beginner method. Focuses on core puzzle mechanics.</p>
+                    <ul class="space-y-2 text-gray-200">
+                        <li>✅ 2x2 (Beginner Layer Method)</li>
+                        <li>✅ 3x3 (CFOP Beginner/4 Look Last Layer)</li>
+                        <li>✅ Pyraminx Basics</li>
+                        <li>✅ Skewb Fundamentals</li>
+                    </ul>
+                    <button onclick="openModal('enroll', 'Foundation Tier')" class="mt-8 w-full bg-rubiks-blue hover:bg-opacity-80 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                        Select Tier
+                    </button>
+                </div>
+
+                <!-- Tier 2: Speedcubing -->
+                <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-rubiks-yellow transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="timer" class="w-8 h-8 mr-3 text-rubiks-yellow"></i>
+                        <h3 class="text-2xl font-bold">Advanced Speed Tier</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Master advanced methods and transition to larger, more complex puzzles and specialized events.</p>
+                    <ul class="space-y-2 text-gray-200">
+                        <li>✅ 2x2 (CLL)</li>
+                        <li>✅ 3x3 (Full CFOP)</li>
+                        <li>✅ 4x4 (Yau Method)</li>
+                        <li>✅ Square-1</li>
+                        <li>✅ 3x3 One-Handed (OH)</li>
+                        <li>✅ Skewb (Sarah's Intermediate)</li>
+                        <li class="font-semibold text-rubiks-yellow">⭐ Advanced WCA Events Covered</li>
+                    </ul>
+                    <button onclick="openModal('enroll', 'Advanced Speed Tier')" class="mt-8 w-full bg-rubiks-yellow hover:bg-opacity-80 text-gray-900 font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                        Select Tier
+                    </button>
+                </div>
+
+                <!-- Tier 3: WCA Complete Mastery -->
+                <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-rubiks-orange transform hover:scale-[1.02] transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="trophy" class="w-8 h-8 mr-3 text-rubiks-orange"></i>
+                        <h3 class="text-2xl font-bold">WCA Pro Mastery</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">The ultimate package: complete mastery of the remaining **12 WCA events**, including $3 \times 3$ Blindfolded.</p>
+                    <ul class="space-y-2 text-gray-200">
+                        <li>✅ Full 12-Event WCA Curriculum</li>
+                        <li>✅ Advanced 3x3 Blindfolded Solves (M2/OP & M2/Orozco)</li>
+                        <li>✅ Large Cube (6x6 & 7x7) Optimization</li>
+                        <li class="font-semibold text-rubiks-orange">🏆 Competition Ready Training</li>
+                    </ul>
+                    <button onclick="openModal('enroll', 'WCA Pro Mastery')" class="mt-8 w-full bg-rubiks-orange hover:bg-opacity-80 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                        Select Tier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-4">Meet Your Expert Instructors</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Learn from a team of active WCA competitors, each specializing in different events to give you a comprehensive skill set.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Instructor 1: Ritesh R Nair -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg border-b-4 border-rubiks-blue">
+                    <img src="https://placehold.co/120x120/0052b4/ffffff?text=RRN" alt="Ritesh Nair Profile" class="w-28 h-28 rounded-full object-cover mx-auto shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Ritesh R Nair</h3>
+                    <p class="text-sm text-rubiks-blue font-semibold mb-2">WCA ID: 2022NAIR06</p>
+                    <p class="text-sm text-gray-600">
+                        Specialist in Skewb and advanced speed techniques on Clock. Focuses on systematic group solving.
+                    </p>
+                </div>
+
+                <!-- Instructor 2: Muhammad Shehzad Khan -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg border-b-4 border-rubiks-yellow">
+                    <img src="https://placehold.co/120x120/ff5800/ffffff?text=MSK" alt="Muhammad Khan Profile" class="w-28 h-28 rounded-full object-cover mx-auto shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Muhammad Shehzad Khan</h3>
+                    <p class="text-sm text-rubiks-yellow font-semibold mb-2">WCA ID: 2015KHAN18</p>
+                    <p class="text-sm text-gray-600">
+                        Core event master, focusing on Advanced 3x3 (Full OLL/PLL) and 3x3 One Handed speed strategies.
+                    </p>
+                </div>
+
+                <!-- Instructor 3: Sol Kabeemer -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg border-b-4 border-rubiks-blue">
+                    <img src="https://placehold.co/120x120/0052b4/ffffff?text=SK" alt="Sol Kabeemer Profile" class="w-28 h-28 rounded-full object-cover mx-auto shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Sol Kabeemer</h3>
+                    <p class="text-sm text-rubiks-blue font-semibold mb-2">WCA ID: 2017KABE01</p>
+                    <p class="text-sm text-gray-600">
+                        Expert in 3x3, 3x3 Blindfold & Big Cubes. Excels in dexterity training and complex puzzle handling.
+                    </p>
+                </div>
+
+                <!-- Instructor 4: Smijo P Abhraham -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg border-b-4 border-rubiks-yellow">
+                    <img src="https://placehold.co/120x120/ff5800/ffffff?text=SPA" alt="Smijo Abhraham Profile" class="w-28 h-28 rounded-full object-cover mx-auto shadow-md mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Smijo P Abhraham</h3>
+                    <p class="text-sm text-rubiks-yellow font-semibold mb-2">WCA ID: 2022ABRA08</p>
+                    <p class="text-sm text-gray-600">
+                        Focuses on Big Cubes(6x6 & 7x7) and the Megaminx puzzle. Great at refining foundational techniques for faster solves.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 cube-bg text-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold mb-4">Ready to Start Solving?</h2>
+            <p class="text-xl font-light mb-8">
+                Have questions about the right course tier, scheduling, or specific events? Reach out to us directly!
+            </p>
+            <button onclick="openModal('inquiry')" class="bg-rubiks-orange text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                Get in Touch
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 The Cube Academy. All Rights Reserved.</p>
+            <p class="text-sm mt-2">WCA Events and terminology are used for educational reference.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Registration/Inquiry -->
+    <div id="enrollment-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg transform transition-transform duration-300 scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800">Enrollment Inquiry</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <form id="enrollment-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Full Name</label>
+                    <input type="text" id="name" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email Address</label>
+                    <input type="email" id="email" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="course">Interested Course/Topic</label>
+                    <select id="course" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200">
+                        <option value="">-- Select or type a course --</option>
+                        <option value="Foundation Tier">Foundation Tier</option>
+                        <option value="Advanced Speed Tier">Advanced Speed Tier</option>
+                        <option value="WCA Pro Mastery">WCA Pro Mastery</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Your Current Skill/Message</label>
+                    <textarea id="message" rows="3" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200" placeholder="e.g., I can solve the 3x3 in 30s and want to learn F2L."></textarea>
+                </div>
+                <div id="modal-message" class="text-sm text-center text-green-600 mb-4 hidden"></div>
+                <button type="submit" class="w-full bg-rubiks-orange hover:bg-opacity-90 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Array of the 12 core WCA Events (FMC removed)
+        const wcaEvents = [{
+                name: "3x3x3 Cube",
+                description: "The classic event. Mastering CFOP, Roux, or ZZ methods."
+            }, {
+                name: "2x2x2 Cube",
+                description: "Speedy layer-by-layer methods (Ort, CLL) for the small cube."
+            }, {
+                name: "4x4x4 Cube",
+                description: "Reduction method, focusing on Yau for advanced speed."
+            }, {
+                name: "5x5x5 Cube",
+                description: "Advanced reduction and parity handling."
+            }, {
+                name: "6x6x6 Cube",
+                description: "Even larger reduction and complex parity."
+            }, {
+                name: "7x7x7 Cube",
+                description: "The largest WCA puzzle, focusing on group solving."
+            }, {
+                name: "3x3x3 One-Handed",
+                description: "Developing dexterity and control for single-handed solves."
+            }, {
+                name: "3x3x3 Blindfolded",
+                description: "Memorization systems (M2/OP) and execution."
+            },
+            // Fewest Moves Challenge (FMC) removed per request.
+            {
+                name: "Clock",
+                description: "Mastering the mechanical puzzle with optimal pin state manipulation."
+            }, {
+                name: "Megaminx",
+                description: "The 12-sided puzzle. Extended F2L and LSE techniques."
+            }, {
+                name: "Pyraminx",
+                description: "Intuitive and fast layer methods (L4E)."
+            }, {
+                name: "Skewb",
+                description: "Efficient layer-by-layer or full-method solving, including Sarah's Intermediate."
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const eventsGrid = document.getElementById('events-grid');
+
+            // 1. Render WCA Event Cards
+            eventsGrid.innerHTML = ''; // Clear existing content to ensure accurate count
+            wcaEvents.forEach(event => {
+                const eventCard = document.createElement('div');
+                eventCard.className = 'bg-white rounded-xl p-6 shadow-cube border-t-4 border-rubiks-orange hover:shadow-xl transition duration-300 transform hover:-translate-y-1';
+
+                let icon = '<i data-lucide="cubes" class="w-6 h-6 mb-2 text-rubiks-blue"></i>'; // Default
+
+                if (event.name.includes('Blindfolded')) {
+                    icon = '<i data-lucide="brain-circuit" class="w-6 h-6 mb-2 text-rubiks-orange"></i>';
+                } else if (event.name.includes('Clock') || event.name.includes('Megaminx') || event.name.includes('Pyraminx') || event.name.includes('Skewb')) {
+                    icon = '<i data-lucide="timer" class="w-6 h-6 mb-2 text-rubiks-blue"></i>';
+                }
+
+                eventCard.innerHTML = `
+                    ${icon}
+                    <h4 class="text-xl font-bold text-gray-800">${event.name}</h4>
+                    <p class="text-sm text-gray-500 mt-1">${event.description}</p>
+                `;
+                eventsGrid.appendChild(eventCard);
+            });
+
+            // 2. Modal Functionality
+            const modal = document.getElementById('enrollment-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const courseSelect = document.getElementById('course');
+            const form = document.getElementById('enrollment-form');
+            const messageDiv = document.getElementById('modal-message');
+
+            window.openModal = (type, courseName = '') => {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.style.opacity = '1', 10); // Simple opacity transition start
+
+                if (type === 'enroll' && courseName) {
+                    modalTitle.textContent = `Enrollment for: ${courseName}`;
+                    courseSelect.value = courseName;
+                } else if (type === 'enroll') {
+                    modalTitle.textContent = 'Enrollment Inquiry';
+                    courseSelect.value = courseSelect.options[0].value; // Reset to default
+                } else {
+                    modalTitle.textContent = 'General Inquiry';
+                    courseSelect.value = 'General Inquiry';
+                }
+
+                messageDiv.classList.add('hidden');
+            };
+
+            window.closeModal = () => {
+                modal.style.opacity = '0';
+                setTimeout(() => modal.classList.add('hidden'), 300); // Wait for transition
+            };
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simulate form submission success (since there is no backend)
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const course = courseSelect.value;
+                const message = document.getElementById('message').value;
+
+                // Log data to console for demonstration
+                console.log("--- Form Submitted ---");
+                console.log(`Name: ${name}`);
+                console.log(`Email: ${email}`);
+                console.log(`Course: ${course}`);
+                console.log(`Message: ${message}`);
+                console.log("----------------------");
+
+                // Display success message
+                messageDiv.textContent = `Thank thank you, ${name}! Your inquiry about ${course} has been sent. We will contact you at ${email} shortly.`;
+                messageDiv.classList.remove('hidden');
+
+                // Clear the form fields
+                form.reset();
+
+                // Optional: Automatically close the modal after a delay
+                setTimeout(closeModal, 4000);
+            });
+
+            // 3. Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('translate-x-full'), 10);
+            });
+
+            window.closeMobileMenu = () => {
+                mobileMenu.classList.add('translate-x-full');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            };
+
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+
+</html>
