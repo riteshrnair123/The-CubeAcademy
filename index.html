@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The CubeAcademy | WCA Mastery Classes</title>
-    <link rel="icon" href="Gemini_Generated_Image_ky8mnsky8mnsky8m.png">
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font -->
@@ -130,8 +129,27 @@
             </section>
 
             <!-- WCA Events Grid Section -->
-            <section id="events-grid-inner" class="py-20 bg-gray-50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section id="events-grid-inner" class="py-20 bg-gray-50 relative overflow-hidden">
+                
+                <!-- START: CUSTOM LOGO WATERMARK BACKGROUND -->
+                <!-- Watermark Logo Image (Highly Transparent) -->
+                <div class="absolute inset-0 opacity-10" style="
+                    background-image: url('Gemini_Generated_Image_ky8mnsky8mnsky8m.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 500px; /* Adjust size for visibility */
+                    z-index: 1;
+                "></div>
+                
+                <!-- Radial Gradient Overlay for subtle fade/blend at edges -->
+                <div class="absolute inset-0 z-20" style="
+                    /* Fades the logo out near the edges using the background color (#f8fafc) */
+                    background: radial-gradient(circle at center, rgba(248, 250, 252, 0.2) 30%, rgba(248, 250, 252, 1) 100%); 
+                "></div>
+                <!-- END: CUSTOM LOGO WATERMARK BACKGROUND -->
+
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
                     <!-- WCA Logo added to the heading -->
                     <div class="flex items-center justify-center mb-4">
                         <h2 class="text-4xl font-extrabold text-gray-800 text-center mr-3">The 12 Paths to Cubing Glory</h2>
