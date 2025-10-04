@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The CubeAcademy | WCA Mastery Classes</title>
+    <!-- Favicon: Added the page logo to the browser tab/bookmark -->
+    <link rel="icon" href="Gemini_Generated_Image_ky8mnsky8mnsky8m.jpg" type="image/jpeg">
+    
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font -->
@@ -17,9 +20,11 @@
             background-color: #1a202c; /* Dark background for contrast */
         }
         .text-rubiks-blue { color: #0052b4; }
-        .bg-rubiks-orange { background-color: #ffcd00; }
-        .bg-rubiks-yellow { background-color: #ffcd00; }
-        .border-rubiks-green { border-color: #ffcd00; }
+        /* BUTTON COLOR STANDARDIZED TO YELLOW */
+        .bg-rubiks-yellow { background-color: #ffcd00; } 
+        .bg-rubiks-orange { background-color: #ffcd00; } 
+        /* BORDER COLOR STANDARDIZED TO YELLOW */
+        .border-rubiks-green { border-color: #ffcd00; } 
         .shadow-cube {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
@@ -64,6 +69,9 @@
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-rubiks-blue flex items-center">
+                <!-- START: UPDATED LOGO INTEGRATION -->
+                <img src="Gemini_Generated_Image_ky8mnsky8mnsky8m.jpg" alt="The Cube Academy Logo" class="w-12 h-12 mr-2 object-contain flex-shrink-0">
+                <!-- END: UPDATED LOGO INTEGRATION -->
                 The Cube Academy
             </div>
             <nav id="main-nav" class="hidden md:flex space-x-8 text-gray-700 font-medium">
@@ -74,7 +82,8 @@
                 <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', this)" id="nav-contact" class="hover:text-rubiks-orange transition duration-300">Contact</a>
             </nav>
-            <button onclick="openModal('enroll')" class="hidden md:block bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+            <button onclick="openModal('enroll')" class="hidden md:block bg-rubiks-yellow hover:bg-opacity-90 text-gray-900 font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                 Enroll Now
             </button>
             <!-- Mobile Menu Button (Hamburger) -->
@@ -96,7 +105,8 @@
             <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Instructor</a>
             <!-- UPDATED: Now 'Contact' -->
             <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact')); closeMobileMenu();" class="text-gray-800 hover:text-rubiks-orange transition duration-300">Contact</a>
-            <button onclick="openModal('enroll'); closeMobileMenu();" class="mt-4 bg-rubiks-orange hover:bg-opacity-90 text-white font-semibold py-3 rounded-lg shadow-md">
+            <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+            <button onclick="openModal('enroll'); closeMobileMenu();" class="mt-4 bg-rubiks-yellow hover:bg-opacity-90 text-gray-900 font-semibold py-3 rounded-lg shadow-md">
                 Enroll Now
             </button>
         </nav>
@@ -125,10 +135,11 @@
                         Taught by a WCA Competitor and expert, specializing in advanced speed techniques.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                        <button onclick="openModal('enroll')" class="bg-rubiks-orange text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                         <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+                        <button onclick="openModal('enroll')" class="bg-rubiks-yellow text-gray-900 text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
                             Start Your Mastery Path
                         </button>
-                        <!-- Updated link to scroll to the grid on the same page -->
+                        <!-- Button remains white/gray but uses new style class for consistency -->
                         <a href="#events-grid-inner" class="bg-white text-gray-800 text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105 flex items-center justify-center">
                             <i data-lucide="brain-circuit" class="w-5 h-5 mr-2"></i> View All Events
                         </a>
@@ -195,7 +206,8 @@
                                 <li>✅ 3x3 (CFOP Beginner/4 Look Last Layer)</li>
                                 <li>✅ Skewb or Pyraminx Fundamentals</li>
                             </ul>
-                            <button onclick="openModal('enroll', 'Foundation Tier')" class="mt-8 w-full bg-rubiks-blue hover:bg-opacity-80 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                            <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+                            <button onclick="openModal('enroll', 'Foundation Tier')" class="mt-8 w-full bg-rubiks-yellow hover:bg-opacity-80 text-gray-900 font-semibold py-3 rounded-lg shadow-md transition duration-300">
                                 Select Tier
                             </button>
                         </div>
@@ -215,6 +227,7 @@
                                 <li>✅ Weekly homework and technique review</li>
                                 <li class="font-semibold text-rubiks-yellow">⭐ Advanced WCA Events Covered</li>
                             </ul>
+                             <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
                             <button onclick="openModal('enroll', 'Advanced Speed Tier')" class="mt-8 w-full bg-rubiks-yellow hover:bg-opacity-80 text-gray-900 font-semibold py-3 rounded-lg shadow-md transition duration-300">
                                 Select Tier
                             </button>
@@ -232,7 +245,8 @@
                                 <li>✅ Advanced 3x3 Blindfolded Solves (M2/OP & M2/Orozco)</li>
                                 <li class="font-semibold text-rubiks-orange">✅ 🏆 Competition Ready Training & Custom competition strategy and mental preparation</li>
                             </ul>
-                            <button onclick="openModal('enroll', 'Ultimate Speedcubing Tier')" class="mt-8 w-full bg-rubiks-orange hover:bg-opacity-80 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                            <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+                            <button onclick="openModal('enroll', 'Ultimate Speedcubing Tier')" class="mt-8 w-full bg-rubiks-yellow hover:bg-opacity-80 text-gray-900 font-semibold py-3 rounded-lg shadow-md transition duration-300">
                                 Select Tier
                             </button>
                         </div>
@@ -368,7 +382,8 @@
                     <p class="text-xl font-light mb-8">
                         Have questions about the right course tier, scheduling, or specific events? Reach out to us directly!
                     </p>
-                    <button onclick="openModal('inquiry')" class="bg-rubiks-orange text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+                    <button onclick="openModal('inquiry')" class="bg-rubiks-yellow text-gray-900 text-xl font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
                         Get in Touch
                     </button>
                     
@@ -443,7 +458,8 @@
                     <textarea id="message" name="message" rows="3" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-rubiks-blue transition duration-200" placeholder="e.g., I can solve the 3x3 in 30s and want to learn F2L."></textarea>
                 </div>
                 <div id="modal-message" class="text-sm text-center text-green-600 mb-4 hidden"></div>
-                <button type="submit" class="w-full bg-rubiks-orange hover:bg-opacity-90 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
+                 <!-- BUTTON COLOR CHANGED TO YELLOW, TEXT TO BLACK -->
+                <button type="submit" class="w-full bg-rubiks-yellow hover:bg-opacity-90 text-gray-900 font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
                     Submit Inquiry
                 </button>
             </form>
@@ -453,6 +469,7 @@
 <!-- Floating WhatsApp Chat Button -->
     <a href="https://wa.me/917012264390?text=Hello!%20I%20have%20a%20question%20about%20the%20Cube%20Academy%20courses." target="_blank"
         class="fixed bottom-6 right-6 z-50 bg-white p-3 rounded-full shadow-2xl transition duration-300 transform hover:scale-110 border-4 border-rubiks-blue">
+        <!-- Kept the original image for the WhatsApp button as it's not a primary brand button -->
         <img src="png-transparent-whatsapp-logo-computer-icons-whatsapp-whatsapp-application-logo.png" alt="WhatsApp Chat" class="w-10 h-10 object-contain">
     </a>
     <script>
