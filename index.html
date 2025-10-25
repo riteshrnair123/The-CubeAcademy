@@ -79,6 +79,8 @@
                 <a href="#" onclick="navigateTo('page-events', this)" id="nav-events" class="hover:text-blue-600 transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', this)" id="nav-courses" class="hover:text-blue-600 transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', this)" id="nav-instructor" class="hover:text-blue-600 transition duration-300">Instructor</a>
+                <!-- NEW: Gear Link -->
+                <a href="#" onclick="navigateTo('page-gear', this)" id="nav-gear" class="hover:text-blue-600 transition duration-300">Gear</a>
                 <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', this)" id="nav-contact" class="hover:text-blue-600 transition duration-300">Contact</a>
             </nav>
@@ -103,6 +105,8 @@
             <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Events</a>
             <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Courses</a>
             <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Instructor</a>
+            <!-- NEW: Gear Link -->
+            <a href="#" onclick="navigateTo('page-gear', document.getElementById('nav-gear')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Gear</a>
             <!-- UPDATED: Now 'Contact' -->
             <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
             <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
@@ -452,6 +456,117 @@
             </section>
         </div>
 
+        <!-- ============================================= -->
+        <!-- NEW PAGE 5: RECOMMENDED GEAR -->
+        <!-- ============================================= -->
+        <div id="page-gear" class="page-content bg-gray-50 hidden">
+            <section class="py-20">
+                <div class="container mx-auto max-w-7xl px-6 lg:px-8">
+                    
+                    <!-- 1. Header Section -->
+                    <div class="max-w-3xl mx-auto text-center">
+                        <h2 class="text-base font-semibold leading-7 text-rubiks-blue">
+                            <i data-lucide="cubes" class="inline-block w-5 h-5" aria-hidden="true"></i>
+                            TCA Recommended Gear
+                        </h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Get the Right Gear, Right Now.
+                        </p>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">
+                            Stop guessing what to buy. Start your journey with the exact hardware recommended by your coach. These kits have everything you need to go from beginner to intermediate, all in one box.
+                        </p>
+                    </div>
+
+                    <!-- 2. Kit Comparison Grid -->
+                    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+
+                        <!-- Kit 1: The "Foundation" Kit -->
+                        <div class="flex flex-col rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 overflow-hidden course-card-hover transition duration-300">
+                            <div class="p-8 sm:p-10 flex-1 flex flex-col">
+                                <h3 class="text-lg font-semibold leading-7 text-rubiks-blue">The Foundation Kit</h3>
+                                <p class="mt-1 text-sm leading-6 text-gray-500">Perfect for new cubers & Foundation Tier students.</p>
+                                
+                                <div class="mt-6">
+                                    <p class="text-2xl font-bold tracking-tight text-gray-900">
+                                        Approx. ₹1,000 - ₹1,500
+                                    </p>
+                                    <p class="text-xs text-gray-500">Price varies by retailer and specific models.</p>
+                                </div>
+
+                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 flex-1">
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>3x3 Cube:</strong> A solid, magnetic budget cube (e.g., MoYu RS3 M).
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>2x2 Cube:</strong> A decent, compatible 2x2 (e.g., QiYi MS 2x2).
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>Cube Lube:</strong> One bottle of basic silicone lube for speed/control.
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- This <a> tag is where you would put your affiliate link -->
+                            <a href="#" aria-describedby="kit-1" class="block bg-gray-800 hover:bg-gray-700 px-6 py-4 text-center text-sm font-semibold leading-6 text-white transition-colors">
+                                Buy at a Partner Store
+                            </a>
+                        </div>
+
+                        <!-- Kit 2: The "Advanced Speed" Kit -->
+                        <div class="flex flex-col rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 overflow-hidden course-card-hover transition duration-300">
+                            <div class="p-8 sm:p-10 flex-1 flex flex-col">
+                                <h3 class="text-lg font-semibold leading-7 text-rubiks-blue">The Advanced Speed Kit</h3>
+                                <p class="mt-1 text-sm leading-6 text-gray-500">For serious cubers & Advanced Tier students.</p>
+                                
+                                <div class="mt-6">
+                                    <p class="text-2xl font-bold tracking-tight text-gray-900">
+                                        Approx. ₹3,000 - ₹4,500
+                                    </p>
+                                    <p class="text-xs text-gray-500">Price varies by retailer and specific models.</p>
+                                </div>
+
+                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 flex-1">
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>Pro 3x3 Cube:</strong> A "pro-level" performance 3x3 (e.g., Gan or MoYu WeiLong).
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>4x4 Cube:</strong> Your recommended 4x4 for the Yau method (e.g., YJ MGC 4x4).
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>Skewb:</strong> Your preferred competition Skewb (since it's your specialty).
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
+                                        <strong>Pro Lube Kit:</strong> A set of 2-3 lubes for speed, control, and hardware.
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- This <a> tag is where you would put your affiliate link -->
+                            <a href="#" aria-describedby="kit-2" class="block bg-primary-blue hover-bg-primary-blue px-6 py-4 text-center text-sm font-semibold leading-6 text-white transition-colors">
+                                Buy at a Partner Store
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. How it Works / FAQ -->
+                    <div class="max-w-3xl mx-auto mt-16 sm:mt-24 text-center">
+                        <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+                            How This Works
+                        </h3>
+                        <p class="mt-4 text-lg leading-8 text-gray-600">
+                            I've partnered with India's top cube stores to make this easy. When you click a link, you'll be taken to their site to purchase. As an affiliate, I may earn a small commission from your purchase at no extra cost to you.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -464,6 +579,8 @@
                 <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events'))" class="hover:text-blue-500 transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses'))" class="hover:text-blue-500 transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor'))" class="hover:text-blue-500 transition duration-300">Instructor</a>
+                <!-- NEW: Gear Link -->
+                <a href="#" onclick="navigateTo('page-gear', document.getElementById('nav-gear'))" class="hover:text-blue-500 transition duration-300">Gear</a>
                 <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact'))" id="footer-contact-link" class="hover:text-blue-500 transition duration-300">Contact</a>
             </div>
@@ -665,4 +782,3 @@
     </script>
 </body>
 </html>
-
