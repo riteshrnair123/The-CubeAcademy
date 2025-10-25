@@ -84,12 +84,7 @@
                 <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', this)" id="nav-contact" class="hover:text-blue-600 transition duration-300">Contact</a>
             </nav>
-            <!-- NEW: Cart Icon (Desktop) -->
             <div class="flex items-center space-x-4">
-                <a href="#" onclick="navigateTo('page-cart', this)" id="nav-cart" class="relative text-gray-600 hover:text-blue-600 transition duration-300">
-                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-                    <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
-                </a>
                 <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
                 <button onclick="openModal('enroll')" class="hidden md:block bg-primary-blue hover-bg-primary-blue text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                     Enroll Now
@@ -115,15 +110,10 @@
             <!-- UPDATED: Now 'Contact' -->
             <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
             
-            <!-- NEW: Critique & Cart Links (Mobile) -->
+            <!-- NEW: Critique Link (Mobile) -->
             <a href="#" onclick="navigateTo('page-critique', document.getElementById('nav-critique')); closeMobileMenu();" class="mt-4 text-gray-800 hover:text-blue-600 transition duration-300 flex items-center">
                 <i data-lucide="video" class="w-6 h-6 mr-2"></i>
                 Solve Critique
-            </a>
-            <a href="#" onclick="navigateTo('page-cart', document.getElementById('nav-cart')); closeMobileMenu();" class="mt-4 text-gray-800 hover:text-blue-600 transition duration-300 flex items-center">
-                <i data-lucide="shopping-cart" class="w-6 h-6 mr-2"></i>
-                My Cart
-                <span id="mobile-cart-count-badge" class="ml-2 bg-red-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
             </a>
 
             <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
@@ -156,8 +146,9 @@
                         Taught by a WCA Competitor and expert, specializing in advanced speed techniques.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                         <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
+                        <!-- UPDATED: Button now links to Courses page and is styled blue -->
                         <button onclick="navigateTo('page-courses', document.getElementById('nav-courses'))" class="bg-primary-blue hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-xl inline-flex items-center justify-center">
+                            <i data-lucide="rocket" class="w-5 h-5 mr-3"></i>
                             Start Your Mastery Path
                         </button>
                         <!-- Button remains white/gray but uses new style class for consistency -->
@@ -383,7 +374,7 @@
 
                                 <p class="italic text-gray-300 mb-4">"The focus on large cubes (6x6 and 7x7) in the Ultimate Speedcubing Tier is unbeatable. The parity section alone was worth the enrollment. Great course for serious cubers!"</p>
 
-                                <p class="text-sm font-semibold text-blue-500">- Mike D., Ultimate Tier</p>
+<p class="text-sm font-semibold text-blue-500">- Mike D., Ultimate Tier</p>
 
                             </div>
 
@@ -472,7 +463,7 @@
                     <h2 class="text-4xl font-extrabold mb-4">Ready to Start Solving?</h2>
                     <p class="text-xl font-light mb-8">
                         Have questions about the right course tier, scheduling, or specific events? Reach out to us directly!
-                    </p>
+                    </loc>
                     <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
                     <button onclick="openModal('inquiry')" class="bg-primary-blue hover-bg-primary-blue text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                         Get in Touch
@@ -503,28 +494,31 @@
                         </p>
                     </div>
 
-                    <!-- 2. Price & "Add to Cart" -->
+                    <!-- 2. Price & Action Button -->
                     <div class="mt-16 max-w-md mx-auto text-center">
                         <p class="text-5xl font-extrabold tracking-tight text-white">
                             ₹499
                         </p>
                         <p class="text-lg text-gray-400">Per "Average of 5" Analysis</p>
-                        <!-- UPDATED: Changed from "Buy Now" to "Add to Cart" -->
-                        <button onclick="addToCart('critique')" class="mt-8 block w-full bg-primary-blue hover-bg-primary-blue text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                            <i data-lucide="plus-circle" class="inline-block w-5 h-5 mr-2 -mt-1"></i>
-                            Add to Cart
-                        </button>
-                        <p class="mt-3 text-xs text-gray-500">You can add multiple items to your cart before checkout.</p>
+                        <!-- 
+                          UPDATED: This is now a link (<a> tag) styled as a button.
+                          It opens your Google Form in a new tab.
+                          REPLACE the href value with your copied Google Form link!
+                        -->
+                        <a href="https://forms.gle/RzSkvLKUaB5vhWqD6" target="_blank" class="mt-8 block w-full bg-primary-blue hover-bg-primary-blue text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                            Submit Your Solve (₹499)
+                        </a>
+                        <p class="mt-3 text-xs text-gray-500">You will be taken to our secure submission form.</p>
                     </div>
 
-                    <!-- 3. How It Works -->
+                    <!-- 3. How It Works (UPDATED) -->
                     <div class="mt-20 max-w-4xl mx-auto text-left">
                         <h3 class="text-3xl font-bold text-center text-blue-400 mb-10">How It Works (3 Easy Steps)</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-b-4 border-primary-blue">
                                 <span class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full text-2xl font-bold mb-4">1</span>
-                                <h4 class="text-xl font-bold mb-2">Submit Your Video</h4>
-                                <p class="text-gray-300 text-sm">After purchase, you'll get an email link. Just upload a single video of you completing an "Average of 5" (ao5). No special quality needed—a phone video is perfect.</p>
+                                <h4 class="text-xl font-bold mb-2">Click & Submit</h4>
+                                <p class="text-gray-300 text-sm">Click the button above to go to our submission form. There, you'll pay via UPI, upload your payment screenshot, and upload your video file all in one place.</p>
                             </div>
                             <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-b-4 border-primary-blue">
                                 <span class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full text-2xl font-bold mb-4">2</span>
@@ -538,57 +532,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ============================================= -->
-        <!-- NEW PAGE 6: SHOPPING CART -->
-        <!-- ============================================= -->
-        <div id="page-cart" class="page-content bg-gray-50 hidden">
-            <section class="py-20">
-                <div class="container mx-auto max-w-4xl px-6 lg:px-8">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-                        Your Shopping Cart
-                    </h2>
-                    
-                    <div id="cart-empty-message" class="hidden text-center mt-12">
-                        <i data-lucide="shopping-cart" class="w-16 h-16 text-gray-300 mx-auto"></i>
-                        <p class="mt-4 text-xl text-gray-500">Your cart is currently empty.</p>
-                        <button onclick="navigateTo('page-critique', document.getElementById('nav-critique'))" class="mt-6 bg-primary-blue hover-bg-primary-blue text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                            Browse Services
-                        </button>
-                    </div>
-
-                    <div id="cart-content" class="mt-12 hidden">
-                        <!-- Cart Items Container -->
-                        <div id="cart-items-container" class="space-y-6">
-                            <!-- JS will render cart items here -->
-                        </div>
-
-                        <!-- Cart Summary -->
-                        <div class="mt-12 pt-8 border-t border-gray-200">
-                            <h3 class="text-2xl font-semibold text-gray-800">Order Summary</h3>
-                            <div class="mt-4 p-6 bg-white rounded-lg shadow-md">
-                                <div class="flex justify-between items-center text-lg font-medium text-gray-700">
-                                    <span>Subtotal</span>
-                                    <span id="cart-subtotal">₹0.00</span>
-                                </div>
-                                <div class="flex justify-between items-center text-sm text-gray-500 mt-2">
-                                    <span>Taxes</span>
-                                    <span>Calculated at checkout</span>
-                                </div>
-                                <div class="flex justify-between items-center text-2xl font-bold text-gray-900 mt-4 pt-4 border-t">
-                                    <span>Total</span>
-                                    <span id="cart-total">₹0.00</span>
-                                </div>
-                                <button onclick="openPaymentModal()" class="mt-6 w-full bg-primary-blue hover-bg-primary-blue text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                                    Proceed to Checkout
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </section>
         </div>
@@ -648,6 +591,7 @@
                         <option value="Foundation Tier">Foundation Tier</option>
                         <option value="Advanced Speed Tier">Advanced Speed Tier</option>
                         <option value="Ultimate Speedcubing Tier">Ultimate Speedcubing Tier</option>
+                        <option value="One-Time Solve Critique">One-Time Solve Critique</option>
                         <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
@@ -663,56 +607,6 @@
             </form>
             <!-- END: FORMSPREE INTEGRATION -->
         </div>
-    </div>
-
-    <!-- NEW: Modal for Critique/Cart Payment -->
-    <div id="critique-payment-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden transition-opacity duration-300" style="opacity: 0;">
-        <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md transform transition-transform duration-300 scale-95">
-            <div class="flex justify-between items-center mb-6">
-                <h3 id="payment-modal-title" class="text-2xl font-bold text-gray-800">Confirm Your Purchase</h3>
-                <button onclick="closePaymentModal()" class="text-gray-400 hover:text-gray-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-
-            <!-- Payment Details -->
-            <div id="payment-details">
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-1">Item:</label>
-                    <p id="payment-item-name" class="text-lg text-gray-900">Cart Total</p>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-1">Price:</label>
-                    <p id="payment-item-price" class="text-3xl font-extrabold text-rubiks-blue">₹0.00</p>
-                </div>
-                
-                <!-- 
-                    PAYMENT BUTTON:
-                    This is where you would integrate your payment processor.
-                    For Razorpay, you would replace this button with a script that
-                    opens the Razorpay checkout.
-                    
-                    For now, it calls a simulation function.
-                -->
-                <button onclick="handlePayment()" id="payment-modal-button" class="w-full bg-primary-blue hover-bg-primary-blue text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
-                    Proceed to Pay
-                </button>
-                <p class="text-xs text-gray-500 text-center mt-3">You will be redirected to our secure payment partner.</p>
-            </div>
-            
-            <!-- Success Message -->
-            <div id="payment-success" class="hidden text-center">
-                <i data-lucide="check-circle" class="w-16 h-16 text-green-500 mx-auto mb-4"></i>
-                <h3 class="text-2xl font-bold text-gray-800">Payment Successful!</h3>
-                <p class="text-gray-600 mt-2">You'll receive an email shortly with instructions on how to submit your video.</p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- NEW: Simple Toast Notification for "Added to Cart" -->
-    <div id="toast-notification" class="fixed top-20 right-5 z-50 bg-gray-900 text-white py-3 px-5 rounded-lg shadow-xl transition-all duration-300 transform translate-x-full" style="opacity: 0;">
-        <!-- Content set by JS -->
     </div>
 
 <!-- Floating WhatsApp Chat Button -->
@@ -737,152 +631,6 @@
             { name: "Pyraminx", description: "Intuitive and fast layer methods (L4E)." },
             { name: "Skewb", description: "Efficient layer-by-layer or full-method solving, including Sarah's Advanced or NS 2.0, One Looking." },
         ];
-
-        // NEW: 1. Product Database
-        const productDatabase = {
-            'critique': { id: 'critique', name: 'One-Time Solve Critique', price: 499, description: 'Avg. of 5 solve analysis' }
-            // You can add more products here, e.g.:
-            // 'foundation-tier': { id: 'foundation-tier', name: 'Foundation Tier', price: 2999, description: 'Complete beginner course' }
-        };
-
-        // NEW: 2. Cart System
-        let cart = [];
-        const toast = document.getElementById('toast-notification');
-        const cartCountBadge = document.getElementById('cart-count-badge');
-        const mobileCartCountBadge = document.getElementById('mobile-cart-count-badge');
-        const cartItemsContainer = document.getElementById('cart-items-container');
-        const cartEmptyMessage = document.getElementById('cart-empty-message');
-        const cartContent = document.getElementById('cart-content');
-        const cartSubtotal = document.getElementById('cart-subtotal');
-        const cartTotal = document.getElementById('cart-total');
-
-        window.loadCart = () => {
-            cart = JSON.parse(localStorage.getItem('theCubeAcademyCart')) || [];
-            updateCartCount();
-        };
-
-        window.saveCart = () => {
-            localStorage.setItem('theCubeAcademyCart', JSON.stringify(cart));
-        };
-
-        window.showToast = (message) => {
-            // Use innerHTML to render the icon
-            toast.innerHTML = `<i data-lucide="check-circle" class="inline-block w-5 h-5 mr-2 -mt-1 text-green-400"></i> ${message}`;
-            lucide.createIcons(); // Re-render icon
-            toast.style.opacity = '1';
-            toast.style.transform = 'translateX(0)';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(100%)';
-            }, 3000);
-        };
-
-        window.addToCart = (productId) => {
-            // FIX: Load the most current cart from localStorage to prevent state issues
-            let currentCart = JSON.parse(localStorage.getItem('theCubeAcademyCart')) || [];
-
-            const product = productDatabase[productId];
-            if (!product) {
-                console.error("Product not found:", productId);
-                return;
-            }
-            
-            // Check if item is already in cart
-            if (currentCart.find(item => item.id === productId)) {
-                showToast("Item is already in your cart!");
-                return;
-            }
-
-            currentCart.push(product);
-            // FIX: Save the modified cart back to localStorage
-            localStorage.setItem('theCubeAcademyCart', JSON.stringify(currentCart));
-            
-            // FIX: Update the global cart variable to match
-            cart = currentCart; 
-
-            updateCartCount();
-            showToast("Item added to cart!");
-        };
-        
-        window.removeFromCart = (productId) => {
-            // FIX: Load the most current cart from localStorage
-            let currentCart = JSON.parse(localStorage.getItem('theCubeAcademyCart')) || [];
-            
-            currentCart = currentCart.filter(item => item.id !== productId);
-            
-            // FIX: Save the modified cart back to localStorage
-            localStorage.setItem('theCubeAcademyCart', JSON.stringify(currentCart));
-
-            // FIX: Update the global cart variable to match
-            cart = currentCart;
-
-            updateCartCount();
-            renderCart(); // Re-render the cart page
-        };
-
-        window.updateCartCount = () => {
-            const count = cart.length;
-            if (count > 0) {
-                cartCountBadge.textContent = count;
-                cartCountBadge.classList.remove('hidden');
-                mobileCartCountBadge.textContent = count;
-                mobileCartCountBadge.classList.remove('hidden');
-            } else {
-                cartCountBadge.classList.add('hidden');
-                mobileCartCountBadge.classList.add('hidden');
-            }
-        };
-
-        window.renderCart = () => {
-            // FIX: Force reload from localStorage to prevent state issues
-            cart = JSON.parse(localStorage.getItem('theCubeAcademyCart')) || []; 
-
-            if (cart.length === 0) {
-                cartEmptyMessage.classList.remove('hidden');
-                cartContent.classList.add('hidden');
-            } else {
-                cartEmptyMessage.classList.add('hidden');
-                cartContent.classList.remove('hidden');
-                
-                cartItemsContainer.innerHTML = ''; // Clear existing items
-                let total = 0;
-
-                cart.forEach(item => {
-                    total += item.price;
-                    const itemHtml = `
-                        <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md">
-                            <div class="flex items-center space-x-4">
-                                <!-- Placeholder icon -->
-                                <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                                    <i data-lucide="video" class="w-8 h-8 text-blue-500"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-800">${item.name}</h4>
-                                    <p class="text-sm text-gray-500">${item.description}</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-lg font-bold text-gray-800">₹${item.price.toFixed(2)}</p>
-                                <button onclick="removeFromCart('${item.id}')" class="text-sm text-red-600 hover:text-red-800 transition duration-300">
-                                    Remove
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    cartItemsContainer.innerHTML += itemHtml;
-                });
-
-                cartSubtotal.textContent = `₹${total.toFixed(2)}`;
-                cartTotal.textContent = `₹${total.toFixed(2)}`;
-            }
-            // FIX: Wrap icon rendering in a try/catch to prevent errors
-            try {
-                lucide.createIcons(); // Render all new icons (like the 'remove' button's icon if it had one, or the video icon)
-            } catch (e) {
-                console.error("Lucide icons failed to render in cart:", e);
-            }
-        };
-
 
         // Function to handle page navigation
         window.navigateTo = (pageId, navElement) => {
@@ -912,31 +660,11 @@
             navLinks.forEach(link => {
                 if (link) link.classList.remove('active-link');
             });
-            
-            // NEW: Separate query for cart icon to handle its specific structure
-            const cartNavLinks = document.querySelectorAll('#nav-cart, #nav-cart i');
-            // FIX: Add guard for link existence
-            cartNavLinks.forEach(link => {
-                if (link) link.classList.remove('active-link');
-            });
 
             if (navElement) {
                 navElement.classList.add('active-link');
-                // Also highlight icon if it's the cart
-                if (navElement.id === 'nav-cart') {
-                    // FIX: Add a guard to make sure the icon exists before adding a class
-                    const icon = navElement.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('active-link');
-                    }
-                }
             }
             
-            // NEW: Render cart if navigating to cart page
-            if (pageId === 'page-cart') {
-                renderCart();
-            }
-
             // 4. Scroll to the top of the content area
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
@@ -969,7 +697,6 @@
             });
 
             // 2. Initial Page Load
-            loadCart(); // Load cart from localStorage on start
             const initialNavElement = document.getElementById('nav-events');
             navigateTo('page-events', initialNavElement);
 
@@ -978,24 +705,14 @@
             const modal = document.getElementById('enrollment-modal');
             const modalTitle = document.getElementById('modal-title');
             const courseSelect = document.getElementById('course');
-            // Form element reference remains, but the submit listener below is REMOVED
-            const form = document.getElementById('enrollment-form');
             const messageDiv = document.getElementById('modal-message');
-
-            // NEW: 4. Payment Modal Functionality
-            const paymentModal = document.getElementById('critique-payment-modal');
-            const paymentDetails = document.getElementById('payment-details');
-            const paymentSuccess = document.getElementById('payment-success');
-            const paymentItemName = document.getElementById('payment-item-name');
-            const paymentItemPrice = document.getElementById('payment-item-price');
-            const paymentModalButton = document.getElementById('payment-modal-button');
 
             window.openModal = (type, courseName = '') => {
                 modal.classList.remove('hidden');
                 setTimeout(() => modal.style.opacity = '1', 10); 
 
                 if (type === 'enroll' && courseName) {
-                    modalTitle.textContent = `Enrollment for: ${courseName}`;
+                    modalTitle.textContent = `Inquiry for: ${courseName}`;
                     courseSelect.value = courseName;
                 } else if (type === 'enroll') {
                     modalTitle.textContent = 'Enrollment Inquiry';
@@ -1011,63 +728,6 @@
             window.closeModal = () => {
                 modal.style.opacity = '0';
                 setTimeout(() => modal.classList.add('hidden'), 300); 
-            };
-
-            window.openPaymentModal = () => {
-                // UPDATED: Now calculates from the cart
-                if (cart.length === 0) {
-                    showToast("Your cart is empty. Add an item first!");
-                    return;
-                }
-
-                let total = 0;
-                cart.forEach(item => total += item.price);
-                
-                paymentItemName.textContent = `Cart Total (${cart.length} item${cart.length > 1 ? 's' : ''})`;
-                paymentItemPrice.textContent = `₹${total.toFixed(2)}`;
-                paymentModalButton.textContent = `Proceed to Pay ₹${total.toFixed(2)}`;
-
-                // Reset modal state to show payment details, not success message
-                paymentDetails.classList.remove('hidden');
-                paymentSuccess.classList.add('hidden');
-
-                paymentModal.classList.remove('hidden');
-                setTimeout(() => {
-                    paymentModal.style.opacity = '1';
-                    paymentModal.querySelector('div').classList.remove('scale-95'); // Pop open
-                }, 10);
-                lucide.createIcons(); // Re-render icons
-            };
-
-            window.closePaymentModal = () => {
-                paymentModal.style.opacity = '0';
-                paymentModal.querySelector('div').classList.add('scale-95'); // Shrink down
-                setTimeout(() => paymentModal.classList.add('hidden'), 300);
-            };
-
-            window.handlePayment = () => {
-                // --- PAYMENT INTEGRATION POINT ---
-                // IN A REAL APP:
-                // 1. You would call your payment gateway (e.g., Razorpay) here.
-                // 2. The payment gateway's "success" callback would then
-                //    trigger the success message and modal close.
-                
-                // --- SIMULATION ---
-                // For now, we'll just simulate a successful payment.
-                paymentDetails.classList.add('hidden');
-                paymentSuccess.classList.remove('hidden');
-                lucide.createIcons(); // Ensure the checkmark icon is rendered
-
-                // NEW: Clear cart after successful payment
-                cart = [];
-                saveCart();
-                updateCartCount();
-                renderCart(); // Re-render cart page (will show empty)
-
-                // Automatically close the modal after 3 seconds
-                setTimeout(() => {
-                    closePaymentModal();
-                }, 3000);
             };
             
             // 4. Mobile Menu Toggle
