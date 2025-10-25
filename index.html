@@ -79,8 +79,8 @@
                 <a href="#" onclick="navigateTo('page-events', this)" id="nav-events" class="hover:text-blue-600 transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', this)" id="nav-courses" class="hover:text-blue-600 transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', this)" id="nav-instructor" class="hover:text-blue-600 transition duration-300">Instructor</a>
-                <!-- NEW: Gear Link -->
-                <a href="#" onclick="navigateTo('page-gear', this)" id="nav-gear" class="hover:text-blue-600 transition duration-300">Gear</a>
+                <!-- NEW: Critique Link -->
+                <a href="#" onclick="navigateTo('page-critique', this)" id="nav-critique" class="hover:text-blue-600 transition duration-300">Critique</a>
                 <!-- UPDATED: Now 'Contact' -->
                 <a href="#" onclick="navigateTo('page-contact', this)" id="nav-contact" class="hover:text-blue-600 transition duration-300">Contact</a>
             </nav>
@@ -105,8 +105,8 @@
             <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Events</a>
             <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Courses</a>
             <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Instructor</a>
-            <!-- NEW: Gear Link -->
-            <a href="#" onclick="navigateTo('page-gear', document.getElementById('nav-gear')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Gear</a>
+            <!-- NEW: Critique Link -->
+            <a href="#" onclick="navigateTo('page-critique', document.getElementById('nav-critique')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Critique</a>
             <!-- UPDATED: Now 'Contact' -->
             <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact')); closeMobileMenu();" class="text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
             <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
@@ -187,382 +187,121 @@
                     </div>
                 </div>
             </section>
-        </div>
-
-        <!-- ============================================= -->
-        <!-- PAGE 2: COURSES -->
-        <!-- ============================================= -->
-        <div id="page-courses" class="page-content cube-bg hidden">
-            <section class="py-20">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-                    <h2 class="text-4xl font-extrabold text-center mb-12">Choose Your Mastery Level</h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Tier 1: Fundamentals -->
-                        <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-rubiks-blue transform hover:scale-[1.02] transition duration-300 course-card-hover">
-                            <div class="flex items-center mb-4">
-                                <i data-lucide="timer" class="w-8 h-8 mr-3 text-blue-400"></i>
-                                <h3 class="text-2xl font-bold">Foundation Tier</h3>
-                            </div>
-                            <p class="text-gray-300 mb-6">Perfect for new solvers or those stuck on the beginner method. Focuses on core puzzle mechanics.</p>
-                            <ul class="space-y-2 text-gray-200">
-                                <li>⭐ Ideal for Diagnostics & Quick Fixes</li>
-                                <li>✅ 3x3 (CFOP Beginner/4 Look Last Layer)</li>
-                                <li>✅ Skewb or Pyraminx Fundamentals</li>
-                            </ul>
-                            <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
-                            <button onclick="openModal('enroll', 'Foundation Tier')" class="mt-8 w-full bg-primary-blue hover-bg-primary-blue text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
-                                Select Tier
-                            </button>
-                        </div>
-
-                        <!-- Tier 2: Speedcubing -->
-                        <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-blue-500 transform hover:scale-[1.02] transition duration-300 course-card-hover">
-                            <div class="flex items-center mb-4">
-                                <i data-lucide="timer" class="w-8 h-8 mr-3 text-blue-400"></i>
-                                <h3 class="text-2xl font-bold">Advanced Speed Tier</h3>
-                            </div>
-                            <p class="text-gray-300 mb-6">Master advanced methods and transition to larger, more complex puzzles and specialized events.</p>
-                            <ul class="space-y-2 text-gray-200">
-                                <li>✅ 2x2 (CLL)</li>
-                                <li>✅ 3x3 (Full CFOP) & 4x4 (Yau Method)</li>
-                                <li>✅ 3x3 One-Handed (OH)</li>
-                                <li>✅ Skewb (Sarah's Intermediate)</li>
-                                <li>✅ Weekly homework and technique review</li>
-                                <li class="font-semibold text-blue-400">⭐ Advanced WCA Events Covered</li>
-                            </ul>
-                             <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
-                            <button onclick="openModal('enroll', 'Advanced Speed Tier')" class="mt-8 w-full bg-primary-blue hover-bg-primary-blue text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
-                                Select Tier
-                            </button>
-                        </div>
-
-                        <!-- Tier 3: Ultimate Speedcubing Tier -->
-                        <div class="bg-gray-700 rounded-xl p-8 shadow-cube border-b-4 border-primary-blue transform hover:scale-[1.02] transition duration-300 course-card-hover">
-                            <div class="flex items-center mb-4">
-                                <i data-lucide="trophy" class="w-8 h-8 mr-3 text-blue-400"></i>
-                            <h3 class="text-2xl font-bold">Ultimate Speedcubing Tier</h3>
-                            </div>
-                            <p class="text-gray-300 mb-6">The ultimate package: complete mastery of the remaining 14 WCA events, including 3x3 Blindfolded.</p>
-                            <ul class="space-y-2 text-gray-200">
-                                <li>✅ Full 14-Event WCA Curriculum</li>
-                                <li>✅ Advanced 3x3 Blindfolded Solves (M2/OP & M2/Orozco)</li>
-                                <li class="font-semibold text-blue-400">✅ 🏆 Competition Ready Training & Custom competition strategy and mental preparation</li>
-                            </ul>
-                            <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
-                            <button onclick="openModal('enroll', 'Ultimate Speedcubing Tier')" class="mt-8 w-full bg-primary-blue hover-bg-primary-blue text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
-                                Select Tier
-                            </button>
-                        </div>
-                    </div>
-
-          <!-- New: Customer Reviews Section -->
-
-                    <div class="mt-20">
-
-                        <h2 class="text-3xl font-extrabold text-center text-blue-400 mb-10">Student Success Stories</h2>
-
-                        
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                            
-
-                            <!-- Review 1 -->
-
-                            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-
-                                <div class="flex mb-3">
-
-                                    <!-- 4 Filled Stars -->
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 obnoxious 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <!-- 1 Empty Star -->
-
-                                    <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                </div>
-
-                                <p class="italic text-gray-300 mb-4">"The Advanced Speed Tier was exactly what I needed. My F2L efficiency has skyrocketed, and the Yau method breakdown for 4x4 was brilliant. Highly recommend Ritesh's coaching!"</p>
-
-                                <p class="text-sm font-semibold text-blue-500">- Arjun S., Advanced Tier</p>
-
-                            </div>
-
-
-
-                            <!-- Review 2 -->
-
-                            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-
-                                <div class="flex mb-3">
-
-                                    <!-- 4 Filled Stars -->
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 obnoxious 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <!-- 1 Empty Star -->
-
-                                    <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                </div>
-
-                                <p class="italic text-gray-300 mb-4">"I finally learned Clock and Megaminx! The Foundation Tier was perfect for starting the side events. The lessons were clear and the weekly assignments helped me practice consistently."</p>
-
-                                <p class="text-sm font-semibold text-blue-500">- Priya L., Foundation Tier</p>
-
-                            </div>
-
-
-
-                            <!-- Review 3 -->
-
-                            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-
-                                <div class="flex mb-3">
-
-                                    <!-- 4 Filled Stars -->
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 obnoxious 6.88L12 18.25l-6.18 obnoxious 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <svg class="w-5 h-5 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                    <!-- 1 Empty Star -->
-
-                                    <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 18.25l-6.18 3.27L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-
-                                </div>
-
-                                <p class="italic text-gray-300 mb-4">"The focus on large cubes (6x6 and 7x7) in the Ultimate Speedcubing Tier is unbeatable. The parity section alone was worth the enrollment. Great course for serious cubers!"</p>
-
-                                <p class="text-sm font-semibold text-blue-500">- Mike D., Ultimate Tier</p>
-
-                            </div>
-
-
-
-                        </div>
-
-                        <p class="text-center text-gray-500 mt-8 text-sm">4.7/5.0 Average Rating across all programs based on verified student feedback.</p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>         
-        <!-- ============================================= -->
-        <!-- PAGE 3: INSTRUCTOR -->
-        <!-- ============================================= -->
-        <div id="page-instructor" class="page-content bg-gray-50 hidden">
-            <section class="py-20">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <!-- UPDATED: Heading for single instructor -->
-                    <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-4">Meet Your Expert Instructor</h2>
-                    <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-                        Learn from an active WCA competitor, specializing in advanced speed techniques and comprehensive puzzle mastery.
-                    </p>
-
-                    <!-- UPDATED: Layout changed to center the single instructor -->
-                    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-xl mx-auto">
-
-                        <!-- Instructor 1: Ritesh R Nair (KEPT ALL CHANGES HERE) -->
-                        <div class="bg-white rounded-xl p-8 text-center shadow-lg border-b-4 border-rubiks-blue">
-                            <!-- Use the uploaded image -->
-                            <img src="PHOTO-2025-05-15-21-55-37.jpg" alt="Ritesh R Nair Profile" class="w-32 h-32 rounded-full object-cover mx-auto shadow-md mb-4 border-4 border-blue-500">
-                            <h3 class="text-2xl font-bold text-gray-800">Ritesh R Nair</h3>
-                            <p class="text-md text-rubiks-blue font-semibold mb-2">WCA ID: 2022NAIR06</p>
-                            
-                            <!-- WCA Achievements Counter -->
-                            <div class="mt-4 border-t pt-4 grid grid-cols-3 gap-4">
-                                <div class="stat-card">
-                                    <i data-lucide="award" class="w-5 h-5 mx-auto mb-1 text-blue-500"></i>
-                                    <p class="text-xl font-extrabold text-gray-900">40+</p>
-                                    <p class="text-xs text-gray-500 font-medium">Competitions Podiums</p>
-                                </div>
-                                <div class="stat-card">
-                                    <i data-lucide="trending-up" class="w-5 h-5 mx-auto mb-1 text-rubiks-blue"></i>
-                                    <p class="text-xl font-extrabold text-gray-900">2000+</p>
-                                    <p class="text-xs text-gray-500 font-medium">Official Solves Logged</p>
-                                </div>
-                                <div class="stat-card">
-                                    <i data-lucide="users" class="w-5 h-5 mx-auto mb-1 text-blue-500"></i>
-                                    <p class="text-xl font-extrabold text-gray-900">Top 5%</p>
-                                    <p class="text-xs text-gray-500 font-medium">National Skewb Rank</p>
-                                </div>
-                            </div>
-                            <!-- End Achievements Counter -->
-                            
-                            <!-- Detailed Description -->
-                            <div class="text-left mt-6 pt-4 border-t border-gray-100">
-                                <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="brain-circuit" class="w-5 h-5 mr-2 text-rubiks-blue"></i> Coaching Philosophy</h4>
-                                <p class="text-sm text-gray-600 mb-4">
-                                    Ritesh focuses on a systematic approach to speedcubing, emphasizing Look-ahead, Turning accuracy, and Algorithm efficiency. His methods move students beyond rote memorization into true puzzle understanding, specializing in competition-ready techniques for Skewb, Clock, and 3x3 Blindfolded (M2/OP).
-                                </p>
-                                
-                                <h4 class="text-lg font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="trophy" class="w-5 h-5 mr-2 text-blue-500"></i> Competitive Focus</h4>
-                                <p class="text-sm text-gray-600">
-                                    With significant experience in WCA events, Ritesh provides deep insights into solving strategies for Big cubes and complex side events like Megaminx, Square-1, 3x3 Blindfold etc.. He guides students on competition preparation, stress management, and official protocol to ensure they are ready for the podium.
-                                </p>
-                            </div>
-
-                            <a href="https://www.worldcubeassociation.org/persons/2022NAIR06" target="_blank" class="text-sm text-blue-600 hover:underline mt-4 inline-block font-medium">View Full WCA Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <!-- ============================================= -->
-        <!-- PAGE 4: CONTACT (REVERTED) -->
-        <!-- ============================================= -->
-        <div id="page-contact" class="page-content cube-bg hidden">
-            <section class="py-20 text-white">
-                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-4xl font-extrabold mb-4">Ready to Start Solving?</h2>
-                    <p class="text-xl font-light mb-8">
-                        Have questions about the right course tier, scheduling, or specific events? Reach out to us directly!
-                    </p>
-                    <!-- BUTTON COLOR CHANGED TO BLUE, TEXT TO WHITE -->
-                    <button onclick="openModal('inquiry')" class="bg-primary-blue hover-bg-primary-blue text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                        Get in Touch
-                    </button>
-                    
-                    <div class="mt-12 p-6 bg-gray-800 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-blue-400 mb-4">What Happens Next?</h3>
-                        <p class="text-gray-300">
-                            When you submit an inquiry, we will personally review your current skill level and discuss a tailored plan that ensures you get the most out of our WCA curriculum. We aim to respond within 24 hours!
+            
+            <!-- NEW: Solve Critique Promo Section -->
+            <section class="bg-gray-800 py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:items-center md:justify-between md:text-left">
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            <span class="block text-blue-400">Stuck at a Plateau?</span>
+                            Get a One-Time Solve Critique.
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Get your solves personally analyzed by Ritesh. You'll receive a 10-15 minute video breaking down your biggest weaknesses and giving you actionable drills to fix them.
                         </p>
                     </div>
+                    <div class="mt-8 md:mt-0 md:w-1/3 flex justify-center md:justify-end">
+                        <button onclick="navigateTo('page-critique', document.getElementById('nav-critique'))" class="bg-white text-gray-800 text-lg font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                            <i data-lucide="video" class="w-5 h-5 mr-2"></i>
+                            Learn More
+                        </button>
+                    </div>
                 </div>
             </section>
         </div>
 
         <!-- ============================================= -->
-        <!-- NEW PAGE 5: RECOMMENDED GEAR -->
+        <!-- NEW PAGE 6: SOLVE CRITIQUE -->
         <!-- ============================================= -->
-        <div id="page-gear" class="page-content bg-gray-50 hidden">
-            <section class="py-20">
+        <div id="page-critique" class="page-content cube-bg hidden">
+            <section class="py-20 text-white">
                 <div class="container mx-auto max-w-7xl px-6 lg:px-8">
-                    
+
                     <!-- 1. Header Section -->
                     <div class="max-w-3xl mx-auto text-center">
-                        <h2 class="text-base font-semibold leading-7 text-rubiks-blue">
-                            <i data-lucide="cubes" class="inline-block w-5 h-5" aria-hidden="true"></i>
-                            TCA Recommended Gear
+                        <h2 class="text-base font-semibold leading-7 text-blue-400">
+                            <i data-lucide="search-check" class="inline-block w-5 h-5" aria-hidden="true"></i>
+                            TCA Solve Analysis
                         </h2>
-                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            Get the Right Gear, Right Now.
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            One-Time Solve Critique
                         </p>
-                        <p class="mt-6 text-lg leading-8 text-gray-600">
-                            Stop guessing what to buy. Start your journey with the exact hardware recommended by your coach. These kits have everything you need to go from beginner to intermediate, all in one box.
+                        <p class="mt-6 text-xl leading-8 text-gray-300">
+                            The single fastest way to break your plateau. Get personalized video feedback from a WCA competitor identifying your exact weaknesses and how to fix them.
                         </p>
                     </div>
 
-                    <!-- 2. Kit Comparison Grid -->
-                    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                    <!-- 2. Price & "Buy Now" -->
+                    <div class="mt-16 max-w-md mx-auto text-center">
+                        <p class="text-5xl font-extrabold tracking-tight text-white">
+                            ₹499
+                        </p>
+                        <p class="text-lg text-gray-400">Per "Average of 5" Analysis</p>
+                        <a href="#" class="mt-8 block w-full bg-primary-blue hover-bg-primary-blue text-white text-lg font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                            Buy Now & Submit Your Solves
+                        </a>
+                        <p class="mt-3 text-xs text-gray-500">You'll receive upload instructions via email after purchase.</p>
+                    </div>
 
-                        <!-- Kit 1: The "Foundation" Kit -->
-                        <div class="flex flex-col rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 overflow-hidden course-card-hover transition duration-300">
-                            <div class="p-8 sm:p-10 flex-1 flex flex-col">
-                                <h3 class="text-lg font-semibold leading-7 text-rubiks-blue">The Foundation Kit</h3>
-                                <p class="mt-1 text-sm leading-6 text-gray-500">Perfect for new cubers & Foundation Tier students.</p>
-                                
-                                <div class="mt-6">
-                                    <p class="text-2xl font-bold tracking-tight text-gray-900">
-                                        Approx. ₹1,000 - ₹1,500
-                                    </p>
-                                    <p class="text-xs text-gray-500">Price varies by retailer and specific models.</p>
+                    <!-- 3. How It Works -->
+                    <div class="max-w-4xl mx-auto mt-20">
+                        <h3 class="text-2xl font-bold tracking-tight text-white text-center mb-10">How It Works (3 Simple Steps)</h3>
+                        <ol class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Step 1 -->
+                            <li class="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold text-xl">1</span>
                                 </div>
-
-                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 flex-1">
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>3x3 Cube:</strong> A solid, magnetic budget cube (e.g., MoYu RS3 M).
-                                    </li>
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>2x2 Cube:</strong> A decent, compatible 2x2 (e.g., QiYi MS 2x2).
-                                    </li>
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>Cube Lube:</strong> One bottle of basic silicone lube for speed/control.
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- This <a> tag is where you would put your affiliate link -->
-                            <a href="#" aria-describedby="kit-1" class="block bg-gray-800 hover:bg-gray-700 px-6 py-4 text-center text-sm font-semibold leading-6 text-white transition-colors">
-                                Buy at a Partner Store
-                            </a>
-                        </div>
-
-                        <!-- Kit 2: The "Advanced Speed" Kit -->
-                        <div class="flex flex-col rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10 overflow-hidden course-card-hover transition duration-300">
-                            <div class="p-8 sm:p-10 flex-1 flex flex-col">
-                                <h3 class="text-lg font-semibold leading-7 text-rubiks-blue">The Advanced Speed Kit</h3>
-                                <p class="mt-1 text-sm leading-6 text-gray-500">For serious cubers & Advanced Tier students.</p>
-                                
-                                <div class="mt-6">
-                                    <p class="text-2xl font-bold tracking-tight text-gray-900">
-                                        Approx. ₹3,000 - ₹4,500
-                                    </p>
-                                    <p class="text-xs text-gray-500">Price varies by retailer and specific models.</p>
+                                <h4 class="mt-4 text-lg font-semibold text-white">Purchase & Record</h4>
+                                <p class="mt-2 text-sm text-gray-300">
+                                    Secure your spot. Then, record a video of 5 solves (an "avg of 5") making sure your hands and the cube are clearly visible.
+                                </p>
+                            </li>
+                            <!-- Step 2 -->
+                            <li class="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold text-xl">2</span>
                                 </div>
-
-                                <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 flex-1">
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>Pro 3x3 Cube:</strong> A "pro-level" performance 3x3 (e.g., Gan or MoYu WeiLong).
-                                    </li>
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>4x4 Cube:</strong> Your recommended 4x4 for the Yau method (e.g., YJ MGC 4x4).
-                                    </li>
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>Skewb:</strong> Your preferred competition Skewb (since it's your specialty).
-                                    </li>
-                                    <li class="flex gap-x-3">
-                                        <i data-lucide="check" class="h-6 w-5 flex-none text-rubiks-blue" aria-hidden="true"></i>
-                                        <strong>Pro Lube Kit:</strong> A set of 2-3 lubes for speed, control, and hardware.
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- This <a> tag is where you would put your affiliate link -->
-                            <a href="#" aria-describedby="kit-2" class="block bg-primary-blue hover-bg-primary-blue px-6 py-4 text-center text-sm font-semibold leading-6 text-white transition-colors">
-                                Buy at a Partner Store
-                            </a>
-                        </div>
+                                <h4 class="mt-4 text-lg font-semibold text-white">Submit Your Video</h4>
+                                <p class="mt-2 text-sm text-gray-300">
+                                    Upload your video to Google Drive or as an "Unlisted" YouTube video. You'll get an email with a simple form to submit your link.
+                                </p>
+                            </li>
+                            <!-- Step 3 -->
+                            <li class="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg">
+                                <div class="flex-shrink-0">
+                                    <span class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-500 text-white font-bold text-xl">3</span>
+                                </div>
+                                <h4 class="mt-4 text-lg font-semibold text-white">Receive Your Critique</h4>
+                                <p class="mt-2 text-sm text-gray-300">
+                                    Within 3 business days, you'll get a 10-15 minute personalized video analysis from Ritesh, packed with actionable drills.
+                                </p>
+                            </li>
+                        </ol>
                     </div>
 
-                    <!-- 3. How it Works / FAQ -->
-                    <div class="max-w-3xl mx-auto mt-16 sm:mt-24 text-center">
-                        <h3 class="text-2xl font-bold tracking-tight text-gray-900">
-                            How This Works
-                        </h3>
-                        <p class="mt-4 text-lg leading-8 text-gray-600">
-                            I've partnered with India's top cube stores to make this easy. When you click a link, you'll be taken to their site to purchase. As an affiliate, I may earn a small commission from your purchase at no extra cost to you.
-                        </p>
+                    <!-- 4. "What You Get" Section -->
+                    <div class="max-w-3xl mx-auto mt-20 p-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
+                        <h3 class="text-2xl font-bold text-center text-blue-400 mb-6">What You Get</h3>
+                        <ul role="list" class="space-y-4 text-lg text-gray-300">
+                            <li class="flex gap-x-3">
+                                <i data-lucide="video" class="h-6 w-6 flex-none text-blue-400" aria-hidden="true"></i>
+                                <span>A <strong>10-15 minute personalized video</strong> screen-recording of your solves.</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <i data-lucide="alert-circle" class="h-6 w-6 flex-none text-blue-400" aria-hidden="true"></i>
+                                <span>Your <strong>Top 3 biggest weaknesses</strong> clearly identified (e.g., F2L inefficiency, poor look-ahead, hesitation).</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <i data-lucide="target" class="h-6 w-6 flex-none text-blue-400" aria-hidden="true"></i>
+                                <span><strong>Actionable, specific drills</strong> and algorithms to fix those exact problems.</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <i data-lucide="trending-up" class="h-6 w-6 flex-none text-blue-400" aria-hidden="true"></i>
+                <span>The perfect "next step" to cross-promote your full coaching tiers.</span>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
             </section>
         </div>
@@ -579,10 +318,10 @@
                 <a href="#" onclick="navigateTo('page-events', document.getElementById('nav-events'))" class="hover:text-blue-500 transition duration-300">Events</a>
                 <a href="#" onclick="navigateTo('page-courses', document.getElementById('nav-courses'))" class="hover:text-blue-500 transition duration-300">Courses</a>
                 <a href="#" onclick="navigateTo('page-instructor', document.getElementById('nav-instructor'))" class="hover:text-blue-500 transition duration-300">Instructor</a>
-                <!-- NEW: Gear Link -->
-                <a href="#" onclick="navigateTo('page-gear', document.getElementById('nav-gear'))" class="hover:text-blue-500 transition duration-300">Gear</a>
+                <!-- NEW: Critique Link -->
+                <a href="#" onclick="navigateTo('page-critique', document.getElementById('nav-critique'))" class="hover:text-blue-500 transition duration-300">Critique</a>
                 <!-- UPDATED: Now 'Contact' -->
-                <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact'))" id="footer-contact-link" class="hover:text-blue-500 transition duration-300">Contact</a>
+                <a href="#" onclick="navigateTo('page-contact', document.getElementById('nav-contact'))" id="footer-contact-link" class="hover:text-blue-500 transition duration-3M00">Contact</a>
             </div>
 
             <!-- WCA Reference with Logo -->
@@ -782,3 +521,4 @@
     </script>
 </body>
 </html>
+
